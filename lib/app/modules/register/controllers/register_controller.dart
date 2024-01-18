@@ -6,6 +6,7 @@ import 'package:peminjam_perpustakaan_app/app/data/provider/api_provider.dart';
 import 'package:dio/dio.dart' as dio;
 
 class RegisterController extends GetxController {
+  //TODO: Implement RegisterController
   //TODO: Implement AddBookController
   final GlobalKey<FormState> formkey= GlobalKey<FormState>();
   final TextEditingController namaController = TextEditingController();
@@ -20,12 +21,10 @@ class RegisterController extends GetxController {
   void onInit() {
     super.onInit();
   }
-
   @override
   void onReady() {
     super.onReady();
   }
-
   @override
   void onClose() {
     super.onClose();
@@ -40,7 +39,7 @@ class RegisterController extends GetxController {
       FocusScope.of(Get.context!).unfocus();
       formkey.currentState?.save();
       if(formkey.currentState!.validate()) {
-        final response = await ApiProvider.instance().post(Endpoint.register,
+        final response = await ApiProvider.instance().post(Endpoint.registrasi,
             data: {
               "nama": namaController.text.toString(),
               "username": usernameController.text.toString(),

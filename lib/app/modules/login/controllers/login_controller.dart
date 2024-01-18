@@ -10,6 +10,7 @@ import 'package:peminjam_perpustakaan_app/app/routes/app_pages.dart';
 import 'package:dio/dio.dart' as dio;
 
 class LoginController extends GetxController {
+  //TODO: Implement LoginController
   final GlobalKey<FormState> formkey= GlobalKey<FormState>();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -19,7 +20,6 @@ class LoginController extends GetxController {
   void onInit() {
     super.onInit();
   }
-
   @override
   void onReady() {
     super.onReady();
@@ -52,7 +52,7 @@ class LoginController extends GetxController {
           final ResponseLogin responseLogin =
           ResponseLogin.fromJson(response.data);
           await StorageProvider.write(StorageKey.idUser,
-          "${responseLogin.data?.id}");
+              "${responseLogin.data?.id}");
           await StorageProvider.write(StorageKey.status, "logged");
           Get.offAllNamed(Routes.HOME);
         }else{
